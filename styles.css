@@ -1,7 +1,7 @@
 /* ====================================================================
    PRIYANSHI SINGH — PORTFOLIO STYLES
    Dark theme: near-black background, dark green (#40541D) card fills that
-   brighten into a lighter sage green (#86916A) on hover/flip. Burnt orange
+   brighten into a lighter sage green (#A0AE85) on hover/flip. Burnt orange
    (#B04F07) as the one sparing accent, for tech-stack badges. Adapted from
    the LHP glass-card design system (flip cards, pill nav, reveal-text anim).
    ==================================================================== */
@@ -13,7 +13,7 @@
 /* ===== COLOR VARIABLES ===== */
 :root {
   --primary: #40541D;        /* dark olive green — buttons, nav, links */
-  --primary-light: #86916A;  /* lighter sage green — text/links/accents on dark bg, card-back hover fill */
+  --primary-light: #A0AE85;  /* lighter sage green — text/links/accents on dark bg, card-back hover fill */
   --primary-dark: #1F2A10;   /* deepest green — dark text sitting on light-green fills */
   --card-fill: #2B3319;      /* muted dark olive — card front fill, calmer than --primary */
   --accent: #B04F07;         /* burnt orange — sparing use, tech badges */
@@ -118,7 +118,7 @@ a { color: inherit; }
 
 .nav-links a:hover,
 .nav-links a.active {
-  background: rgba(134, 145, 106, 0.18);
+  background: rgba(160, 174, 133, 0.18);
   border-color: var(--primary-light);
   color: var(--primary-light);
 }
@@ -268,7 +268,7 @@ h3 {
   border-color: var(--primary-light);
   color: var(--primary-dark);
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(134, 145, 106, 0.35);
+  box-shadow: 0 12px 28px rgba(160, 174, 133, 0.35);
 }
 
 .btn-outline {
@@ -364,7 +364,7 @@ h3 {
 }
 
 .info-flip-front {
-  background: var(--card-fill);
+  background: var(--bg-soft);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
@@ -441,8 +441,8 @@ h3 {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--primary-light);
-  background: rgba(134, 145, 106, 0.15);
-  border: 1px solid rgba(134, 145, 106, 0.3);
+  background: rgba(160, 174, 133, 0.15);
+  border: 1px solid rgba(160, 174, 133, 0.3);
   padding: 0.45rem 1rem;
   border-radius: 20px;
   margin: 0.25rem;
@@ -570,7 +570,7 @@ h3 {
 
 .tetris-gallery img:hover {
   transform: scale(1.02);
-  box-shadow: 0 10px 30px rgba(134, 145, 106, 0.4);
+  box-shadow: 0 10px 30px rgba(160, 174, 133, 0.4);
 }
 
 @media (max-width: 600px) {
