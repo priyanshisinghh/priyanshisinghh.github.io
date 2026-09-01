@@ -513,9 +513,6 @@ em {
   margin: 0.25rem;
 }
 
-/* Soft-skill tags for project cards — sits next to tech-badge, same size
-   and shape, but muted gray instead of lavender so the two categories
-   read as distinct without introducing a new color into the palette. */
 .soft-skill-badge {
   display: inline-flex;
   align-items: center;
@@ -529,6 +526,15 @@ em {
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   margin: 0.25rem;
+}
+
+/* Smaller badges, project cards only — everywhere else (project detail
+   pages, Skills section, Experience page) keeps the original larger size. */
+.project-card .tech-badge,
+.project-card .soft-skill-badge {
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+  padding: 0.3rem 0.85rem;
 }
 
 .badge-row {
