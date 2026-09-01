@@ -8,6 +8,8 @@
 </head>
 <body>
 
+  <div class="page-aurora-bg small"><div class="aurora-noise"></div></div>
+
   <!-- Scroll fade-in animations -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -54,45 +56,60 @@
 
   <!-- About -->
   <section class="section">
-    <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
-      <h2>About Me</h2>
-      <p style="font-size: 1.1rem; line-height: 1.7; opacity: 0.95;">
-        I'm a recent UC Davis graduate with dual B.S. degrees in Data Science and Computational
-        Cognitive Science, plus a minor in Computer Science. I like data work that gets handed to
-        someone and acted on — dashboards a manager actually opens, a pipeline that keeps running
-        after I'm gone, a finding that changes a decision. Most of my experience is in building
-        Tableau and Streamlit dashboards for real stakeholders and translating raw data into
-        insights non-technical audiences can use immediately.
-      </p>
+    <div class="container">
+      <div class="about-layout">
+        <div class="about-photo-col">
+          <img src="about-photo.jpeg" alt="Priyanshi Singh" class="about-photo">
+        </div>
+        <div class="about-text-col">
+          <h2>About Me</h2>
+          <p style="font-size: 1.1rem; line-height: 1.7; opacity: 0.95;">
+            I'm a recent UC Davis graduate with dual B.S. degrees in Data Science and Computational
+            Cognitive Science, plus a minor in Computer Science. I like data work that gets handed to
+            someone and acted on — dashboards a manager actually opens, a pipeline that keeps running
+            after I'm gone, a finding that changes a decision. Most of my experience is in building
+            Tableau and Streamlit dashboards for real stakeholders and translating raw data into
+            insights non-technical audiences can use immediately.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Skills -->
   <section class="section" style="background: var(--bg-soft); padding: 4rem 5%;">
-    <div class="container" style="text-align: center;">
-      <h2 style="margin-bottom: 2rem;">Skills</h2>
+    <div class="container">
+      <h2 style="margin-bottom: 2.5rem;">Skills</h2>
 
-      <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.75rem;">Technical</p>
-      <div class="badge-row" style="margin-bottom: 2.5rem;">
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">SQL</span>
-        <span class="skill-badge">R</span>
-        <span class="skill-badge">Tableau</span>
-        <span class="skill-badge">Streamlit</span>
-        <span class="skill-badge">pandas</span>
-        <span class="skill-badge">scikit-learn</span>
-        <span class="skill-badge">Git</span>
-        <span class="skill-badge">Excel</span>
-      </div>
+      <div class="skills-grid">
 
-      <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 0.75rem;">Soft Skills</p>
-      <div class="badge-row">
-        <span class="skill-badge">Stakeholder Communication</span>
-        <span class="skill-badge">Cross-Functional Coordination</span>
-        <span class="skill-badge">Project Management</span>
-        <span class="skill-badge">Organization</span>
-        <span class="skill-badge">Presenting to Non-Technical Audiences</span>
-        <span class="skill-badge">Team Leadership</span>
+        <div class="glass-card skill-card">
+          <div class="skill-category-title" style="color: var(--accent-light);"><span class="skill-category-icon">💻</span>Technical</div>
+          <div class="badge-row" style="justify-content: flex-start;">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">SQL</span>
+            <span class="tech-badge">R</span>
+            <span class="tech-badge">Tableau</span>
+            <span class="tech-badge">Streamlit</span>
+            <span class="tech-badge">pandas</span>
+            <span class="tech-badge">scikit-learn</span>
+            <span class="tech-badge">Git</span>
+            <span class="tech-badge">Excel</span>
+          </div>
+        </div>
+
+        <div class="glass-card skill-card skill-card--cream">
+          <div class="skill-category-title"><span class="skill-category-icon">🤝</span>Soft Skills</div>
+          <div class="badge-row" style="justify-content: flex-start;">
+            <span class="skill-pill">Stakeholder Communication</span>
+            <span class="skill-pill">Cross-Functional Coordination</span>
+            <span class="skill-pill">Project Management</span>
+            <span class="skill-pill">Organization</span>
+            <span class="skill-pill">Presenting to Non-Technical Audiences</span>
+            <span class="skill-pill">Team Leadership</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -101,130 +118,106 @@
   <section class="section" id="projects">
     <div class="container">
       <h2 style="margin-bottom: 3rem;">Projects</h2>
-      <div class="info-flip-grid">
+      <div class="projects-timeline">
 
-        <!-- ASUCD Pantry -->
-        <div class="info-flip-card">
-          <div class="info-flip-inner">
-            <div class="info-flip-front">
-              <div class="feature-icon">📊</div>
-              <h3>ASUCD Pantry: Patron Satisfaction Analysis</h3>
-              <span class="project-date">Oct 2025 – Mar 2026</span>
-              <div class="badge-row">
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Streamlit</span>
-                <span class="tech-badge">Tableau</span>
-              </div>
-            </div>
-            <div class="info-flip-back">
-              <h3>Dashboards for real stakeholders</h3>
-              <p>Built for program coordinators to act on directly — not just a portfolio piece.</p>
-              <a href="projects/asucd-pantry.html" class="btn-small">View Project</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Neural Decision Making -->
-        <div class="info-flip-card">
-          <div class="info-flip-inner">
-            <div class="info-flip-front">
-              <div class="feature-icon">🧠</div>
-              <h3>Neural Decision Making Analysis</h3>
-              <span class="project-date">Jan 2025 – Mar 2025</span>
-              <div class="badge-row">
-                <span class="tech-badge">R</span>
-                <span class="tech-badge">Random Forest</span>
-              </div>
-            </div>
-            <div class="info-flip-back">
-              <h3>Feature engineering & imbalanced data</h3>
-              <p>74.2% accuracy on held-out validation data across 4 experimental subjects.</p>
-              <a href="projects/neural-decision-making.html" class="btn-small">View Project</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Voice Part Classifier -->
-        <div class="info-flip-card">
-          <div class="info-flip-inner">
-            <div class="info-flip-front">
-              <div class="feature-icon">🎤</div>
-              <h3>Voice Part Classifier</h3>
-              <span class="project-date">Aug 2025</span>
-              <div class="badge-row">
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">Jupyter</span>
-              </div>
-            </div>
-            <div class="info-flip-back">
-              <h3>Built for a real use case</h3>
-              <p>Used for actual audition triage within a student a cappella group.</p>
-              <a href="projects/voice-part-classifier.html" class="btn-small">View Project</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Neurotech BCI -->
-        <div class="info-flip-card">
-          <div class="info-flip-inner">
-            <div class="info-flip-front">
-              <div class="feature-icon">🧬</div>
-              <h3>Neurotech BCI: Data Acquisition & Processing</h3>
-              <span class="project-date">Sept 2023 – June 2025</span>
-              <div class="badge-row">
-                <span class="tech-badge">Python</span>
-                <span class="tech-badge">MNE</span>
-                <span class="tech-badge">OpenBCI</span>
-              </div>
-            </div>
-            <div class="info-flip-back">
-              <h3>Presented at conference, twice</h3>
-              <p>EEG data pipeline work presented at the California Neurotechnology Conference in 2024 and 2025.</p>
-              <a href="projects/neurotech-bci.html" class="btn-small">View Project</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Breaking Games Externship -->
-        <div class="info-flip-card">
-          <div class="info-flip-inner">
-            <div class="info-flip-front">
-              <div class="feature-icon">🗄️</div>
-              <h3>Breaking Games: SQL & Database Architecture</h3>
+        <a href="projects/extern-breaking-games.html" class="timeline-item">
+          <div class="timeline-marker"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-header-row">
+              <span class="timeline-icon">🗄️</span>
+              <span class="timeline-event-title">Breaking Games: SQL & Database Architecture [In Progress]</span>
               <span class="project-date">July 2026 – Present</span>
-              <div class="badge-row">
-                <span class="tech-badge">SQL</span>
-                <span class="tech-badge">Database Design</span>
-              </div>
             </div>
-            <div class="info-flip-back">
-              <h3>In progress</h3>
-              <p>Building schema design and BI reporting for e-commerce analytics. More details coming soon.</p>
-              <a href="projects/extern-breaking-games.html" class="btn-small">View Project</a>
+            <p class="timeline-event-blurb">In progress — building schema design and BI reporting for e-commerce analytics.</p>
+            <div class="badge-row" style="justify-content: flex-start;">
+              <span class="tech-badge">SQL</span>
+              <span class="tech-badge">Database Design</span>
             </div>
           </div>
-        </div>
+        </a>
 
-        <!-- The Liquid Hotplates: Website & Brand -->
-        <div class="info-flip-card">
-          <div class="info-flip-inner">
-            <div class="info-flip-front">
-              <div class="feature-icon">🌐</div>
-              <h3>The Liquid Hotplates: Website & Brand</h3>
-              <span class="project-date">Sept 2023 – June 2026</span>
-              <div class="badge-row">
-                <span class="tech-badge">HTML</span>
-                <span class="tech-badge">CSS</span>
-                <span class="tech-badge">JavaScript</span>
-              </div>
+        <a href="projects/asucd-pantry.html" class="timeline-item">
+          <div class="timeline-marker"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-header-row">
+              <span class="timeline-icon">📊</span>
+              <span class="timeline-event-title">ASUCD Pantry: Patron Satisfaction Analysis</span>
+              <span class="project-date">Oct 2025 – Mar 2026</span>
             </div>
-            <div class="info-flip-back">
-              <h3>Design end to end</h3>
-              <p>Custom glass-card UI, animated hero text, and a masonry photo gallery — built from scratch.</p>
-              <a href="projects/lhp-website.html" class="btn-small">View Project</a>
+            <p class="timeline-event-blurb">An end-to-end survey pipeline and live Streamlit dashboard for a campus food pantry serving 5,000+ students.</p>
+            <div class="badge-row" style="justify-content: flex-start;">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Streamlit</span>
+              <span class="tech-badge">Tableau</span>
             </div>
           </div>
-        </div>
+        </a>
+
+        <a href="projects/voice-part-classifier.html" class="timeline-item">
+          <div class="timeline-marker"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-header-row">
+              <span class="timeline-icon">🎤</span>
+              <span class="timeline-event-title">Voice Part Classifier</span>
+              <span class="project-date">Aug 2025</span>
+            </div>
+            <p class="timeline-event-blurb">An ML model predicting vocal part from real audio features, built for actual audition triage in a student a cappella group.</p>
+            <div class="badge-row" style="justify-content: flex-start;">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">Jupyter</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/neural-decision-making.html" class="timeline-item">
+          <div class="timeline-marker"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-header-row">
+              <span class="timeline-icon">🧠</span>
+              <span class="timeline-event-title">Neural Decision Making Analysis</span>
+              <span class="project-date">Jan 2025 – Mar 2025</span>
+            </div>
+            <p class="timeline-event-blurb">A weighted Random Forest model predicting behavioral outcomes from 30,000+ recorded neurons, 74.2% held-out accuracy.</p>
+            <div class="badge-row" style="justify-content: flex-start;">
+              <span class="tech-badge">R</span>
+              <span class="tech-badge">Random Forest</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/neurotech-bci.html" class="timeline-item">
+          <div class="timeline-marker"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-header-row">
+              <span class="timeline-icon">🧬</span>
+              <span class="timeline-event-title">Neurotech BCI: Data Acquisition & Processing</span>
+              <span class="project-date">Sept 2023 – June 2025</span>
+            </div>
+            <p class="timeline-event-blurb">Data collection and processing for two proof-of-concept BCI projects, presented at the California Neurotechnology Conference in 2024 and 2025.</p>
+            <div class="badge-row" style="justify-content: flex-start;">
+              <span class="tech-badge">Python</span>
+              <span class="tech-badge">MNE</span>
+              <span class="tech-badge">OpenBCI</span>
+            </div>
+          </div>
+        </a>
+
+        <a href="projects/lhp-website.html" class="timeline-item">
+          <div class="timeline-marker"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-header-row">
+              <span class="timeline-icon">🌐</span>
+              <span class="timeline-event-title">The Liquid Hotplates: Website & Brand</span>
+              <span class="project-date">Sept 2023 – June 2026</span>
+            </div>
+            <p class="timeline-event-blurb">Custom glass-card UI, animated hero text, and a masonry photo gallery — designed and built from scratch.</p>
+            <div class="badge-row" style="justify-content: flex-start;">
+              <span class="tech-badge">HTML</span>
+              <span class="tech-badge">CSS</span>
+              <span class="tech-badge">JavaScript</span>
+            </div>
+          </div>
+        </a>
 
       </div>
     </div>

@@ -2,13 +2,14 @@
    PRIYANSHI SINGH — PORTFOLIO STYLES
    Dark theme: near-black background, dark green (#40541D) card fills that
    brighten into a lighter sage green (#A0AE85) on hover/flip. Burnt orange
-   (#BD5011) as the one sparing accent, for tech-stack badges. Adapted from
+   (#C24400) as the one sparing accent, for tech-stack badges. Adapted from
    the LHP glass-card design system (flip cards, pill nav, reveal-text anim).
    ==================================================================== */
 
 /* ===== FONTS ===== */
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&display=swap');
 
 /* ===== COLOR VARIABLES ===== */
 :root {
@@ -16,13 +17,15 @@
   --primary-light: #A0AE85;  /* lighter sage green — text/links/accents on dark bg, card-back hover fill */
   --primary-dark: #1F2A10;   /* deepest green — dark text sitting on light-green fills */
   --card-fill: #2B3319;      /* muted dark olive — card front fill, calmer than --primary */
-  --accent: #BD5011;         /* coral orange — sparing use, tech badges */
-  --accent-light: #D97757;   /* lighter orange tint — badge text, legible on near-black */
+  --accent: #C24400;         /* burnt red-orange — sparing use, tech badges */
+  --accent-light: #E06C28;   /* lighter orange tint — badge text, legible on near-black */
+  --gold: #C29B10;           /* gold/mustard — soft-skill badges only */
 
   --bg: #0C0F08;             /* near-black with a cool green cast — main background */
   --bg-soft: #171F0F;        /* slightly lighter dark green — alternating sections, footer */
-  --text-light: #F2F5EC;     /* off-white with a green cast — headings, body text */
-  --text-muted: #B9C2A9;     /* muted light sage — secondary text */
+  --text-light: #E8DDC4;     /* genuine cream — headings, body text (was near-white) */
+  --text-muted: #A9A594;     /* muted warm gray — secondary text */
+  --cream: #D8CBAA;          /* warm parchment/cream — Soft Skills category only */
   --white: #FFFFFF;
   --border-soft: rgba(255, 255, 255, 0.08);
 }
@@ -127,21 +130,25 @@ a { color: inherit; }
    TYPOGRAPHY
    ==================================================================== */
 
-h1, h2, h3 {
+h1, h2 {
+  font-family: 'Fraunces', serif;
+}
+
+h3 {
   font-family: 'DM Sans', 'General Sans', sans-serif;
 }
 
 h1 {
   font-size: 4rem;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: -1px;
-  color: var(--primary-light);
+  color: var(--text-light);
 }
 
 h2 {
   font-size: 2.5rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-light);
   margin-bottom: 1rem;
   text-align: center;
@@ -153,6 +160,15 @@ h3 {
   font-weight: 600;
   color: var(--text-light);
   letter-spacing: -0.3px;
+}
+
+/* Italic accent — for a single word or phrase set apart within a heading,
+   e.g. <h1>Data Analyst & <em>Storyteller</em></h1> */
+em {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--primary-light);
 }
 
 /* ====================================================================
@@ -189,7 +205,7 @@ h3 {
   justify-content: center;
   text-align: center;
   padding: 8rem 5% 4rem;
-  background: var(--bg);
+  background: linear-gradient(160deg, var(--bg) 0%, #1C1A16 100%);
   position: relative;
   overflow: hidden;
 }
@@ -443,8 +459,8 @@ h3 {
   padding: 0.32rem 0.65rem;
   margin: 0.15rem;
   color: var(--accent-light);
-  background: rgba(189, 80, 17, 0.22);
-  border-color: rgba(217, 119, 87, 0.4);
+  background: rgba(194, 68, 0, 0.22);
+  border-color: rgba(224, 108, 40, 0.4);
 }
 
 /* ====================================================================
@@ -456,9 +472,9 @@ h3 {
   align-items: center;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--primary-light);
-  background: rgba(160, 174, 133, 0.15);
-  border: 1px solid rgba(160, 174, 133, 0.3);
+  color: var(--gold);
+  background: rgba(194, 155, 16, 0.15);
+  border: 1px solid rgba(194, 155, 16, 0.3);
   padding: 0.45rem 1rem;
   border-radius: 20px;
   margin: 0.25rem;
@@ -472,8 +488,8 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--accent-light);
-  background: rgba(189, 80, 17, 0.15);
-  border: 1px solid rgba(189, 80, 17, 0.35);
+  background: rgba(194, 68, 0, 0.15);
+  border: 1px solid rgba(194, 68, 0, 0.35);
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   margin: 0.25rem;
@@ -565,6 +581,223 @@ h3 {
 }
 
 /* ====================================================================
+   GLASS CARD
+   Frosted/translucent card style — used for skill category groupings.
+   Prefer this over a solid fill wherever a card doesn't need to carry a
+   big brand-color block (like the timeline dots/badges already do).
+   ==================================================================== */
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 18px;
+  padding: 1.5rem 1.5rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.skill-category-title {
+  font-family: 'DM Sans', 'General Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.skill-category-title .skill-category-icon {
+  margin-right: 0.4rem;
+}
+
+/* Color-coded skill category cards — set --cat-color on the card, then
+   the title and pills inside pick it up automatically. */
+.skill-card--cream { --cat-color: var(--cream); }
+
+.skill-card .skill-category-title {
+  color: var(--cat-color);
+}
+
+.skill-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--cat-color);
+  background: color-mix(in srgb, var(--cat-color) 16%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cat-color) 40%, transparent);
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  margin: 0.25rem;
+}
+
+/* ====================================================================
+   PROJECTS TIMELINE
+   Ported from the LHP Events page pattern: a vertical line of clickable
+   entries instead of a card grid. Each .timeline-item is a full <a> link
+   to that project's page.
+   ==================================================================== */
+
+.projects-timeline {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.25rem;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 14px;
+  padding: 1.4rem 1rem 1.4rem 0.5rem;
+  margin: 0 -0.5rem;
+  transition: background 0.25s ease;
+}
+
+.timeline-item:hover {
+  background: rgba(160, 174, 133, 0.08);
+}
+
+.timeline-marker {
+  position: relative;
+  flex-shrink: 0;
+  width: 1.75rem;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+}
+
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  top: 1.75rem;
+  bottom: -2.5rem;
+  left: 50%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.timeline-item:last-child .timeline-marker::after {
+  display: none;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.timeline-item:hover .timeline-dot {
+  border-color: var(--primary-light);
+  background: var(--primary-light);
+}
+
+.timeline-content {
+  flex-grow: 1;
+  padding-bottom: 0.25rem;
+}
+
+.timeline-header-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-icon {
+  font-size: 1.3rem;
+}
+
+.timeline-event-title {
+  font-family: 'DM Sans', 'General Sans', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text-light);
+  transition: color 0.2s ease;
+}
+
+.timeline-item:hover .timeline-event-title {
+  color: var(--primary-light);
+}
+
+.timeline-event-blurb {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+  max-width: 560px;
+}
+
+/* ====================================================================
+   ABOUT LAYOUT — photo (1/3) + text (2/3), side by side
+   ==================================================================== */
+
+.about-layout {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-photo-col {
+  flex: 0 0 33%;
+  max-width: 33%;
+}
+
+.about-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid rgba(160, 174, 133, 0.4);
+}
+
+.about-text-col {
+  flex: 1;
+}
+
+.about-text-col h2 {
+  text-align: left;
+}
+
+@media (max-width: 700px) {
+  .about-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-photo-col {
+    flex: 0 0 auto;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .about-text-col h2 {
+    text-align: center;
+  }
+}
+
+
+
+/* ====================================================================
    TETRIS / MASONRY GALLERY (project screenshots)
    ==================================================================== */
 
@@ -618,6 +851,14 @@ footer {
   padding: 2rem;
   margin-top: 4rem;
   border-top: 1px solid var(--border-soft);
+}
+
+/* Contact and footer share the same background — closing the gap between
+   them lets them read as one continuous block instead of two separate
+   sections with a seam. */
+#contact + footer {
+  margin-top: 0;
+  border-top: none;
 }
 
 footer p {
