@@ -13,13 +13,14 @@
 
 /* ===== COLOR VARIABLES ===== */
 :root {
-  --primary: #40541D;        /* dark olive green — buttons, nav, links */
+  --primary: #36461b;        /* dark olive green — buttons, nav, links */
   --primary-light: #A0AE85;  /* lighter sage green — text/links/accents on dark bg, card-back hover fill */
   --primary-dark: #1F2A10;   /* deepest green — dark text sitting on light-green fills */
   --card-fill: #2B3319;      /* muted dark olive — card front fill, calmer than --primary */
-  --accent: #B32252;         /* deep berry — Technical tags */
-  --accent-light: #D1567F;   /* lighter berry tint — badge text, legible on near-black */
-  --soft-accent: #A9A594;    /* muted warm gray — Soft Skills tags, distinct hue family from Technical's berry */
+  --accent: #ff0055;         /* deep berry — Technical tags */
+  --accent-light: #f3185d;   /* lighter berry tint — badge text, legible on near-black */
+  --soft-accent: #a57a88;       /* deeper rose — controls the badge's background/border tint */
+  --soft-accent-light: #ff97b8; /* dusty rose — controls the visible badge TEXT, tweak this one first */
   --gold: #C29B10;           /* gold/mustard — soft-skill badges only */
 
   --bg: #0C0F08;             /* near-black with a cool green cast — main background */
@@ -400,11 +401,15 @@ em {
 
 .project-date {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--primary-light);
+  background: rgba(160, 174, 133, 0.15);
+  border: 1px solid rgba(160, 174, 133, 0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
   margin-top: 0.4rem;
   margin-bottom: 0.9rem;
 }
@@ -518,7 +523,7 @@ em {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: var(--soft-accent);
+  color: var(--soft-accent-light);
   background: color-mix(in srgb, var(--soft-accent) 15%, transparent);
   border: 1px solid color-mix(in srgb, var(--soft-accent) 35%, transparent);
   padding: 0.4rem 0.9rem;
@@ -674,7 +679,7 @@ em {
 
 /* Color-coded skill category cards — set --cat-color on the card, then
    the title and pills inside pick it up automatically. */
-.skill-card--rose { --cat-color: var(--soft-accent); }
+.skill-card--rose { --cat-color: var(--soft-accent-light); }
 
 .skill-card {
   text-align: center;
@@ -684,9 +689,7 @@ em {
   justify-content: center;
 }
 
-.skill-card .skill-category-title {
-  color: var(--cat-color);
-}
+/* Category titles stay neutral cream — the pills carry the color signal, not the heading. */
 
 .skill-pill {
   display: inline-flex;
