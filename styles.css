@@ -12,9 +12,10 @@
 
 /* ===== COLOR VARIABLES ===== */
 :root {
-  --primary: #40541D;        /* dark olive green — card fronts, default button fill */
+  --primary: #40541D;        /* dark olive green — buttons, nav, links */
   --primary-light: #86916A;  /* lighter sage green — text/links/accents on dark bg, card-back hover fill */
   --primary-dark: #1F2A10;   /* deepest green — dark text sitting on light-green fills */
+  --card-fill: #2B3319;      /* muted dark olive — card front fill, calmer than --primary */
   --accent: #B04F07;         /* burnt orange — sparing use, tech badges */
   --accent-light: #E08A4F;   /* lighter orange tint — badge text, legible on near-black */
 
@@ -363,7 +364,7 @@ h3 {
 }
 
 .info-flip-front {
-  background: var(--primary);
+  background: var(--card-fill);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
