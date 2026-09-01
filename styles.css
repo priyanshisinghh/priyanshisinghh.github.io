@@ -286,8 +286,8 @@ h3 {
 .btn-small {
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  background-color: var(--white);
-  color: var(--primary-dark);
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
   text-decoration: none;
   font-weight: 600;
   border-radius: 50px;
@@ -331,7 +331,7 @@ h3 {
 
 .info-flip-card {
   background-color: transparent;
-  height: 320px;
+  height: 340px;
   perspective: 1000px;
 }
 
@@ -382,13 +382,18 @@ h3 {
 }
 
 .project-date {
-  display: block;
-  font-size: 0.75rem;
+  display: inline-block;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 0.5rem;
+  color: var(--primary-light);
+  background: rgba(160, 174, 133, 0.15);
+  border: 1px solid rgba(160, 174, 133, 0.3);
+  padding: 0.3rem 0.85rem;
+  border-radius: 20px;
+  margin-top: 0.4rem;
+  margin-bottom: 0.9rem;
 }
 
 .info-flip-front h3 {
@@ -420,12 +425,23 @@ h3 {
   font-size: 0.95rem;
 }
 
-/* Card-front tech badges (compact, sits on the dark green fill) */
+/* Card-front tech badges: tighter and clipped so nothing spills past the
+   rounded card edges, since a card's content box can be as narrow as
+   ~236px (300px min card width minus 2rem padding on each side). */
+.info-flip-front,
+.info-flip-back {
+  overflow: hidden;
+}
+
 .info-flip-front .badge-row {
-  margin-bottom: 0.5rem;
+  width: 100%;
+  gap: 0.3rem;
 }
 
 .info-flip-front .tech-badge {
+  font-size: 0.65rem;
+  padding: 0.32rem 0.65rem;
+  margin: 0.15rem;
   color: var(--accent-light);
   background: rgba(176, 79, 7, 0.22);
   border-color: rgba(224, 138, 79, 0.4);
