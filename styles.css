@@ -2,7 +2,7 @@
    PRIYANSHI SINGH — PORTFOLIO STYLES
    Dark theme: near-black background, dark green (#40541D) card fills that
    brighten into a lighter sage green (#A0AE85) on hover/flip. Burnt orange
-   (#B04F07) as the one sparing accent, for tech-stack badges. Adapted from
+   (#D97757) as the one sparing accent, for tech-stack badges. Adapted from
    the LHP glass-card design system (flip cards, pill nav, reveal-text anim).
    ==================================================================== */
 
@@ -16,8 +16,8 @@
   --primary-light: #A0AE85;  /* lighter sage green — text/links/accents on dark bg, card-back hover fill */
   --primary-dark: #1F2A10;   /* deepest green — dark text sitting on light-green fills */
   --card-fill: #2B3319;      /* muted dark olive — card front fill, calmer than --primary */
-  --accent: #B04F07;         /* burnt orange — sparing use, tech badges */
-  --accent-light: #E08A4F;   /* lighter orange tint — badge text, legible on near-black */
+  --accent: #D97757;         /* coral orange — sparing use, tech badges */
+  --accent-light: #E2937B;   /* lighter orange tint — badge text, legible on near-black */
 
   --bg: #0C0F08;             /* near-black with a cool green cast — main background */
   --bg-soft: #171F0F;        /* slightly lighter dark green — alternating sections, footer */
@@ -443,8 +443,8 @@ h3 {
   padding: 0.32rem 0.65rem;
   margin: 0.15rem;
   color: var(--accent-light);
-  background: rgba(176, 79, 7, 0.22);
-  border-color: rgba(224, 138, 79, 0.4);
+  background: rgba(217, 119, 87, 0.22);
+  border-color: rgba(226, 147, 123, 0.4);
 }
 
 /* ====================================================================
@@ -472,8 +472,8 @@ h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--accent-light);
-  background: rgba(176, 79, 7, 0.15);
-  border: 1px solid rgba(176, 79, 7, 0.35);
+  background: rgba(217, 119, 87, 0.15);
+  border: 1px solid rgba(217, 119, 87, 0.35);
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   margin: 0.25rem;
