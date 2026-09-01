@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priyanshi Singh — Data Analyst</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Scroll fade-in animations -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      document.querySelectorAll('.section, .info-flip-card, h2').forEach(el => {
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+    });
+  </script>
+  <script src="js/reveal-text.js"></script>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-pill">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="reveal-text">Priyanshi Singh</h1>
+      <p class="reveal-text">Data Analyst — Dashboards, Insights, & Stakeholder-Facing Analytics</p>
+      <div class="social-links">
+        <a href="https://github.com/priyanshisinghh" target="_blank" class="btn">GitHub</a>
+        <a href="https://linkedin.com/in/priyanshisinghh" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="resume.pdf" target="_blank" class="btn btn-outline">Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="section">
+    <div class="container" style="text-align: center; max-width: 800px; margin: 0 auto;">
+      <h2>About Me</h2>
+      <p style="font-size: 1.1rem; line-height: 1.7; opacity: 0.95;">
+        I'm a recent UC Davis graduate with dual B.S. degrees in Data Science and Computational
+        Cognitive Science, plus a minor in Computer Science. I like data work that gets handed to
+        someone and acted on — dashboards a manager actually opens, a pipeline that keeps running
+        after I'm gone, a finding that changes a decision. Most of my experience is in building
+        Tableau and Streamlit dashboards for real stakeholders and translating raw data into
+        insights non-technical audiences can use immediately.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="section" style="background: #0d0a07; padding: 4rem 5%;">
+    <div class="container" style="text-align: center;">
+      <h2 style="margin-bottom: 2rem;">Skills</h2>
+      <div class="badge-row">
+        <span class="skill-badge">Python</span>
+        <span class="skill-badge">SQL</span>
+        <span class="skill-badge">R</span>
+        <span class="skill-badge">Tableau</span>
+        <span class="skill-badge">Streamlit</span>
+        <span class="skill-badge">pandas</span>
+        <span class="skill-badge">scikit-learn</span>
+        <span class="skill-badge">Git</span>
+        <span class="skill-badge">Excel</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="container">
+      <h2 style="margin-bottom: 3rem;">Projects</h2>
+      <div class="info-flip-grid">
+
+        <!-- ASUCD Pantry -->
+        <div class="info-flip-card">
+          <div class="info-flip-inner">
+            <div class="info-flip-front">
+              <div class="feature-icon">📊</div>
+              <h3>ASUCD Pantry: Patron Satisfaction Analysis</h3>
+              <p>An end-to-end survey pipeline and live Streamlit dashboard for a campus food pantry serving 5,000+ students.</p>
+            </div>
+            <div class="info-flip-back">
+              <h3>Dashboards for real stakeholders</h3>
+              <p>Built for program coordinators to act on directly — not just a portfolio piece.</p>
+              <a href="projects/asucd-pantry.html" class="btn-small">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Neural Decision Making -->
+        <div class="info-flip-card">
+          <div class="info-flip-inner">
+            <div class="info-flip-front">
+              <div class="feature-icon">🧠</div>
+              <h3>Neural Decision Making Analysis</h3>
+              <p>A weighted Random Forest model predicting behavioral outcomes from 30,000+ recorded neurons.</p>
+            </div>
+            <div class="info-flip-back">
+              <h3>Feature engineering & imbalanced data</h3>
+              <p>74.2% accuracy on held-out validation data across 4 experimental subjects.</p>
+              <a href="projects/neural-decision-making.html" class="btn-small">View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voice Part Classifier -->
+        <div class="info-flip-card">
+          <div class="info-flip-inner">
+            <div class="info-flip-front">
+              <div class="feature-icon">🎤</div>
+              <h3>Voice Part Classifier</h3>
+              <p>An ML model predicting vocal part (soprano, alto, tenor, bass) from real audio features.</p>
+            </div>
+            <div class="info-flip-back">
+              <h3>Built for a real use case</h3>
+              <p>Used for actual audition triage within a student a cappella group.</p>
+              <a href="projects/voice-part-classifier.html" class="btn-small">View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="section" id="contact" style="background: #0d0a07; text-align: center;">
+    <div class="container" style="max-width: 700px; margin: 0 auto;">
+      <h2>Get In Touch</h2>
+      <p style="font-size: 1.05rem; opacity: 0.9; margin-bottom: 1.5rem;">
+        Open to analyst and analytics consulting roles — reach out any time.
+      </p>
+      <div class="social-links">
+        <a href="mailto:22singhpriyanshi@gmail.com" class="btn">✉️ Email Me</a>
+        <a href="https://linkedin.com/in/priyanshisinghh" target="_blank" class="btn btn-outline">LinkedIn</a>
+        <a href="https://github.com/priyanshisinghh" target="_blank" class="btn btn-outline">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Priyanshi Singh</p>
+  </footer>
+
+</body>
+</html>

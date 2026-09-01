@@ -1,0 +1,625 @@
+/* ====================================================================
+   PRIYANSHI SINGH — PORTFOLIO STYLES
+   Adapted from The Liquid Hotplates site (glass-card / aurora design system),
+   re-themed from blue/orange to olive green + burnt orange.
+   ==================================================================== */
+
+/* ===== FONTS ===== */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+/* ===== COLOR VARIABLES ===== */
+:root {
+  --primary: #40541D;       /* olive green — main site color: nav, buttons, links */
+  --primary-light: #7A9950; /* light green tint — 2nd aurora blob, on-dark text */
+  --primary-dark: #262F10;  /* dark green shade — button hover state */
+  --accent: #B04F07;        /* burnt orange — the one accent color, used sparingly */
+  --off-white: #FFF7EF;
+  --black: #14100C;
+  --gray: #211A14;
+  --light-gray: #2E2620;
+}
+
+/* ===== GLOBAL RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', 'General Sans', sans-serif;
+  background-color: var(--black);
+  color: var(--off-white);
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+/* ====================================================================
+   NAVIGATION BAR
+   ==================================================================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(20, 16, 12, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.nav-left {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0;
+}
+
+.site-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--off-white);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.nav-pill {
+  grid-column: 2;
+  justify-self: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 0.3rem;
+}
+
+.nav-links a {
+  display: inline-block;
+  color: var(--off-white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.88rem;
+  letter-spacing: 0.3px;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background: rgba(64, 84, 29, 0.25);
+  border-color: var(--primary);
+  color: var(--off-white);
+}
+
+/* ====================================================================
+   TYPOGRAPHY
+   ==================================================================== */
+
+h1, h2, h3 {
+  font-family: 'DM Sans', 'General Sans', sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--off-white);
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--off-white);
+  letter-spacing: -0.3px;
+}
+
+/* ====================================================================
+   LAYOUT & SECTIONS
+   ==================================================================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.section {
+  padding: 6rem 0;
+}
+
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* ====================================================================
+   HERO (gradient, no photo)
+   ==================================================================== */
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 5% 4rem;
+  background: linear-gradient(135deg, var(--black) 0%, var(--gray) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero h1 {
+  margin-bottom: 1.5rem;
+  font-size: 4rem;
+  white-space: nowrap;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* Letter-by-letter reveal animation */
+.reveal-text .letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: letter-reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--letter-delay, 0s);
+}
+
+@keyframes letter-reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero p.reveal-text .letter {
+  animation-name: letter-reveal-tagline;
+}
+
+@keyframes letter-reveal-tagline {
+  to { opacity: 0.95; transform: translateY(0); }
+}
+
+.social-links {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* ====================================================================
+   BUTTONS
+   ==================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--off-white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  font-size: 1rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(64, 84, 29, 0.25);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(64, 84, 29, 0.5);
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: var(--off-white);
+}
+
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: var(--off-white);
+  border-color: var(--primary);
+}
+
+.btn-small {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background-color: var(--primary);
+  color: var(--off-white);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.btn-small:hover {
+  background-color: #262F10;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(64, 84, 29, 0.4);
+}
+
+.back-link {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--primary-light);
+}
+
+/* ====================================================================
+   INFO / PROJECT FLIP CARDS (glass cards)
+   ==================================================================== */
+
+.info-flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.info-flip-card {
+  background-color: transparent;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.info-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.info-flip-card:hover .info-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.info-flip-front,
+.info-flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.info-flip-front {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-flip-back {
+  background: linear-gradient(135deg, rgba(64, 84, 29, 0.25), rgba(64, 84, 29, 0.1));
+  border: 1px solid rgba(64, 84, 29, 0.35);
+  transform: rotateY(180deg);
+}
+
+.info-flip-front .feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.info-flip-front h3,
+.info-flip-back h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+  color: var(--off-white);
+}
+
+.info-flip-front p,
+.info-flip-back p {
+  opacity: 0.85;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+}
+
+/* ====================================================================
+   BADGES — skills (light green) and tech-stack (orange accent)
+   New additions, not in the original LHP stylesheet, styled to match its
+   existing pill language (border-radius, letter-spacing, uppercase).
+   ==================================================================== */
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  background: rgba(64, 84, 29, 0.22);
+  padding: 0.45rem 1rem;
+  border-radius: 20px;
+  margin: 0.25rem;
+}
+
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #E08A4F;
+  background: rgba(176, 79, 7, 0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  margin: 0.25rem;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* ====================================================================
+   AURORA BACKGROUND ACCENT
+   ==================================================================== */
+
+.page-aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.page-aurora-bg::before,
+.page-aurora-bg::after {
+  content: '';
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.25;
+}
+
+.page-aurora-bg::before {
+  background: var(--primary);
+  top: -15%;
+  left: -10%;
+  animation: aurora-drift-a 20s ease-in-out infinite alternate;
+}
+
+.page-aurora-bg::after {
+  background: var(--primary-light);
+  bottom: -20%;
+  right: -10%;
+  animation: aurora-drift-b 24s ease-in-out infinite alternate;
+}
+
+.page-aurora-bg.small::before,
+.page-aurora-bg.small::after {
+  width: 32vw;
+  height: 32vw;
+  opacity: 0.2;
+}
+
+.aurora-blob-orange {
+  position: absolute;
+  width: 36vw;
+  height: 36vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.2;
+  background: var(--accent);
+  top: 30%;
+  left: 35%;
+  animation: aurora-drift-c 26s ease-in-out infinite alternate;
+}
+
+.aurora-noise {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes aurora-drift-a {
+  to { transform: translate(8%, 8%) scale(1.15); }
+}
+
+@keyframes aurora-drift-b {
+  to { transform: translate(-8%, -8%) scale(1.2); }
+}
+
+@keyframes aurora-drift-c {
+  to { transform: translate(-10%, 12%) scale(1.12); }
+}
+
+/* ====================================================================
+   TETRIS / MASONRY GALLERY (project screenshots)
+   ==================================================================== */
+
+.tetris-gallery {
+  columns: 2 380px;
+  column-gap: 1rem;
+}
+
+.tetris-gallery img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  break-inside: avoid;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tetris-gallery img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 30px rgba(64, 84, 29, 0.4);
+}
+
+@media (max-width: 600px) {
+  .tetris-gallery { columns: 2 160px; }
+}
+
+/* ====================================================================
+   SCROLL ANIMATIONS
+   ==================================================================== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ====================================================================
+   FOOTER
+   ==================================================================== */
+
+footer {
+  background-color: var(--light-gray);
+  text-align: center;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ====================================================================
+   RESPONSIVE
+   ==================================================================== */
+
+@media (max-width: 768px) {
+  .nav-container {
+    grid-template-columns: 1fr;
+    row-gap: 0.75rem;
+    padding: 0 4%;
+  }
+
+  .nav-left {
+    grid-column: 1;
+    justify-self: center;
+  }
+
+  .nav-pill {
+    grid-column: 1;
+    justify-self: stretch;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .nav-links {
+    gap: 0;
+    justify-content: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav-links::-webkit-scrollbar { display: none; }
+
+  .nav-links a {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+
+  .hero h1 { white-space: normal; }
+
+  .info-flip-grid { grid-template-columns: 1fr; }
+}
