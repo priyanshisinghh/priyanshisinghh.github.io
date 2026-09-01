@@ -2,7 +2,7 @@
    PRIYANSHI SINGH — PORTFOLIO STYLES
    Dark theme: near-black background, dark green (#40541D) card fills that
    brighten into a lighter sage green (#A0AE85) on hover/flip. Burnt orange
-   (#C24400) as the one sparing accent, for tech-stack badges. Adapted from
+   (#8B7BB5) as the one sparing accent, for tech-stack badges. Adapted from
    the LHP glass-card design system (flip cards, pill nav, reveal-text anim).
    ==================================================================== */
 
@@ -17,8 +17,9 @@
   --primary-light: #A0AE85;  /* lighter sage green — text/links/accents on dark bg, card-back hover fill */
   --primary-dark: #1F2A10;   /* deepest green — dark text sitting on light-green fills */
   --card-fill: #2B3319;      /* muted dark olive — card front fill, calmer than --primary */
-  --accent: #C24400;         /* burnt red-orange — sparing use, tech badges */
-  --accent-light: #E06C28;   /* lighter orange tint — badge text, legible on near-black */
+  --accent: #B32252;         /* deep berry — Technical tags */
+  --accent-light: #D1567F;   /* lighter berry tint — badge text, legible on near-black */
+  --soft-accent: #A9A594;    /* muted warm gray — Soft Skills tags, distinct hue family from Technical's berry */
   --gold: #C29B10;           /* gold/mustard — soft-skill badges only */
 
   --bg: #0C0F08;             /* near-black with a cool green cast — main background */
@@ -399,6 +400,19 @@ em {
 
 .project-date {
   display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--primary-light);
+  margin-top: 0.4rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Status flags (e.g. "Work in Progress") keep the pill look project-date
+   used to have — a badge makes sense for a status, less so for a plain date. */
+.status-badge {
+  display: inline-block;
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -408,8 +422,7 @@ em {
   border: 1px solid rgba(160, 174, 133, 0.3);
   padding: 0.3rem 0.85rem;
   border-radius: 20px;
-  margin-top: 0.4rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 2rem;
 }
 
 .info-flip-front h3 {
@@ -459,8 +472,8 @@ em {
   padding: 0.32rem 0.65rem;
   margin: 0.15rem;
   color: var(--accent-light);
-  background: rgba(194, 68, 0, 0.22);
-  border-color: rgba(224, 108, 40, 0.4);
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  border-color: color-mix(in srgb, var(--accent-light) 40%, transparent);
 }
 
 /* ====================================================================
@@ -488,8 +501,26 @@ em {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--accent-light);
-  background: rgba(194, 68, 0, 0.15);
-  border: 1px solid rgba(194, 68, 0, 0.35);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  margin: 0.25rem;
+}
+
+/* Soft-skill tags for project cards — sits next to tech-badge, same size
+   and shape, but muted gray instead of lavender so the two categories
+   read as distinct without introducing a new color into the palette. */
+.soft-skill-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--soft-accent);
+  background: color-mix(in srgb, var(--soft-accent) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--soft-accent) 35%, transparent);
   padding: 0.4rem 0.9rem;
   border-radius: 20px;
   margin: 0.25rem;
@@ -559,6 +590,25 @@ em {
   animation: aurora-drift-c 26s ease-in-out infinite alternate;
 }
 
+.aurora-blob-cream {
+  position: absolute;
+  width: 32vw;
+  height: 32vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.14;
+  background: var(--cream);
+  bottom: -10%;
+  left: 10%;
+  animation: aurora-drift-d 23s ease-in-out infinite alternate;
+}
+
+.page-aurora-bg.small .aurora-blob-cream {
+  width: 22vw;
+  height: 22vw;
+  opacity: 0.1;
+}
+
 .aurora-noise {
   position: absolute;
   inset: 0;
@@ -578,6 +628,10 @@ em {
 
 @keyframes aurora-drift-c {
   to { transform: translate(-10%, 12%) scale(1.12); }
+}
+
+@keyframes aurora-drift-d {
+  to { transform: translate(9%, -10%) scale(1.1); }
 }
 
 /* ====================================================================
@@ -620,7 +674,7 @@ em {
 
 /* Color-coded skill category cards — set --cat-color on the card, then
    the title and pills inside pick it up automatically. */
-.skill-card--cream { --cat-color: var(--cream); }
+.skill-card--rose { --cat-color: var(--soft-accent); }
 
 .skill-card {
   text-align: center;
@@ -650,11 +704,59 @@ em {
 }
 
 /* ====================================================================
-   PROJECTS TIMELINE
-   Ported from the LHP Events page pattern: a vertical line of clickable
-   entries instead of a card grid. Each .timeline-item is a full <a> link
-   to that project's page.
+   PROJECT CARDS
+   Glass-card grid, ordered by relevance rather than date. Replaces the
+   chronological timeline — a portfolio isn't a resume, so leading with
+   the most relevant work (not the most recent) is the right call here.
    ==================================================================== */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.project-card-title {
+  font-family: 'DM Sans', 'General Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.project-card:hover .project-card-title {
+  color: var(--primary-light);
+}
+
+.project-card-blurb {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.project-card .badge-row {
+  justify-content: flex-start;
+}
+
+
 
 .projects-timeline {
   max-width: 760px;
