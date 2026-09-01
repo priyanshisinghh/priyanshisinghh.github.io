@@ -622,6 +622,14 @@ em {
    the title and pills inside pick it up automatically. */
 .skill-card--cream { --cat-color: var(--cream); }
 
+.skill-card {
+  text-align: center;
+}
+
+.skill-card .badge-row {
+  justify-content: center;
+}
+
 .skill-card .skill-category-title {
   color: var(--cat-color);
 }
@@ -629,12 +637,14 @@ em {
 .skill-pill {
   display: inline-flex;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: var(--cat-color);
   background: color-mix(in srgb, var(--cat-color) 16%, transparent);
   border: 1px solid color-mix(in srgb, var(--cat-color) 40%, transparent);
-  padding: 0.45rem 1rem;
+  padding: 0.4rem 0.9rem;
   border-radius: 20px;
   margin: 0.25rem;
 }
@@ -704,6 +714,21 @@ em {
 .timeline-item:hover .timeline-dot {
   border-color: var(--primary-light);
   background: var(--primary-light);
+}
+
+/* Featured projects: a permanently-filled dot + brighter bold title, so the
+   most relevant work stands out without breaking chronological order. */
+.timeline-item--featured .timeline-dot {
+  width: 16px;
+  height: 16px;
+  background: var(--primary-light);
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(160, 174, 133, 0.18);
+}
+
+.timeline-item--featured .timeline-event-title {
+  color: var(--primary-light);
+  font-weight: 700;
 }
 
 .timeline-content {
